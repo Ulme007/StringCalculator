@@ -41,4 +41,51 @@ public class StringCalculatorTest {
         // then
         assertEquals(2, result);
     }
+
+    @Test
+    public void shouldReturnThreeForNumberOneAndTwo() throws Exception {
+        // given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        // when
+        int result = stringCalculator.add("1,2");
+
+        // then
+        assertEquals(3, result);
+    }
+    @Test
+    public void shouldReturnSixForNumberOneAndTwoANDThree() throws Exception {
+        // given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        // when
+        int result = stringCalculator.add("1,2,3");
+
+        // then
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void shouldReturnSixForNumberOneAndTwoANDThreeWithNewline() throws Exception {
+        // given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        // when
+        int result = stringCalculator.add("1\n2,3");
+
+        // then
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void shouldReturnThreeForCustomDelimiterAndOneTwo() throws Exception {
+        // given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        // when
+        int result = stringCalculator.add("//;\n1;2");
+
+        // then
+        assertEquals(3, result);
+    }
 }
