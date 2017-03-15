@@ -177,4 +177,16 @@ public class StringCalculatorTest {
         // then
         assertEquals(2, result);
     }
+
+    @Test
+    public void shouldWorksWithDelimiterWithAnyLength() throws Exception {
+        // given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        // when
+        int result = stringCalculator.add("//[***]\n1***2***3");
+
+        // then
+        assertEquals(6, result);
+    }
 }
