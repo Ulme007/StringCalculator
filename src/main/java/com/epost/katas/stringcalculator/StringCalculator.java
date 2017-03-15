@@ -48,7 +48,7 @@ public class StringCalculator {
     }
 
     private String getDelimiter(String expression) {
-        Pattern p = Pattern.compile( "//\\[?(.+)\\]?" );
+        Pattern p = Pattern.compile( "//\\[?([^\\[\\]]+)\\]?" );
         Matcher m = p.matcher( expression );
         String delimiter = null;
 
